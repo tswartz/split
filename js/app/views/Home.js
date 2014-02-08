@@ -33,7 +33,7 @@ define(function (require) {
             this.trip.set({start:$('#start').val(), destination:$('#destination').val(), 
                 people:$('#people').val(), mpg:$('#mpg').val()});
             this.tripView = new TripView({trip: this.trip, el: $("body")});
-            this.tripView.render();
+            this.tripView.calculateTrip();
         },
 
         onkeypress: function (event) {

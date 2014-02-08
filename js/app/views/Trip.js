@@ -17,8 +17,6 @@ define(function (require) {
         },
 
         render: function () {
-            console.log(this.$el);
-            
             this.$el.empty().html("<p>" + this.trip.get('start') + "</p>");
             //this.$el.html(template(this.model.attributes));
             return this;
@@ -26,6 +24,10 @@ define(function (require) {
 
         calculateTrip: function() {
 
+            this.tripResults = {
+                
+            }
+            this.render();
         }
 
     });
