@@ -5,19 +5,27 @@ define(function (require) {
     var $                   = require('jquery'),
         _                   = require('underscore'),
         Backbone            = require('backbone'),
-        tpl                 = require('text!tpl/Employee.html'),
+        tpl                 = require('text!tpl/Trip.html'),
 
         template = _.template(tpl);
 
     return Backbone.View.extend({
 
-        initialize: function () {
+        initialize: function (data) {
+            this.trip = data.trip
             this.render();
         },
 
         render: function () {
-            this.$el.html(template(this.model.attributes));
+            console.log(this.$el);
+            
+            this.$el.empty().html("<p>" + this.trip.get('start') + "</p>");
+            //this.$el.html(template(this.model.attributes));
             return this;
+        },
+
+        calculateTrip: function() {
+
         }
 
     });

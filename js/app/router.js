@@ -15,8 +15,7 @@ define(function (require) {
 
         routes: {
             "": "home",
-            "employees/:id": "employeeDetails",
-            "employees/:id/reports": "reports"
+            "trip": "calculateTrip"
         },
 
         home: function () {
@@ -24,27 +23,28 @@ define(function (require) {
             slider.slidePage(homeView.$el);
         },
 
-        employeeDetails: function (id) {
-            require(["app/models/employee", "app/views/Employee"], function (models, EmployeeView) {
-                var employee = new models.Employee({id: id});
-                employee.fetch({
+        calculateTrip: function (id) {
+            require(["app/models/trip", "app/views/Trip"], function (models, TripView) {
+                var trip = new models.Trip();
+                trip.fetch({
                     success: function (data) {
-                        slider.slidePage(new EmployeeView({model: data}).$el);
-                    }
-                });
-            });
-        },
-
-        reports: function (id) {
-            require(["app/models/employee", "app/views/Reports"], function (models, ReportsView) {
-                var employee = new models.Employee({id: id});
-                employee.fetch({
-                    success: function (data) {
-                        slider.slidePage(new ReportsView({model: data}).$el);
+                        slider.slidePage(new TripView({model: data}).$el);
                     }
                 });
             });
         }
+        // ,
+
+        // reports: function (id) {
+        //     require(["app/models/employee", "app/views/Reports"], function (models, ReportsView) {
+        //         var employee = new models.Employee({id: id});
+        //         employee.fetch({
+        //             success: function (data) {
+        //                 slider.slidePage(new ReportsView({model: data}).$el);
+        //             }
+        //         });
+        //     });
+        // }
 
     });
 

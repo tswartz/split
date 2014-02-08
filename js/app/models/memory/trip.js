@@ -72,20 +72,6 @@ define(function (require) {
 
         }),
 
-        EmployeeCollection = Backbone.Collection.extend({
-
-            model: Employee,
-
-            sync: function (method, model, options) {
-                if (method === "read") {
-                    findByName(options.data.name).done(function (data) {
-                        options.success(data);
-                    });
-                }
-            }
-
-        }),
-
         ReportsCollection = Backbone.Collection.extend({
 
             model: Employee,
@@ -102,7 +88,6 @@ define(function (require) {
 
     return {
         Employee: Employee,
-        EmployeeCollection: EmployeeCollection,
         ReportsCollection: ReportsCollection
     };
 

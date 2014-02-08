@@ -5,22 +5,12 @@ define(function (require) {
     var $                   = require('jquery'),
         Backbone            = require('backbone'),
 
-        Employee = Backbone.Model.extend({
+        Trip = Backbone.Model.extend({
 
-            urlRoot: "http://localhost:3000/employees",
+            urlRoot: "http://localhost:3000/trip",
 
             initialize: function () {
-                this.reports = new EmployeeCollection();
-                this.reports.url = this.urlRoot + "/" + this.id + "/reports";
             }
-
-        }),
-
-        EmployeeCollection = Backbone.Collection.extend({
-
-            model: Employee,
-
-            url: "http://localhost:3000/employees"
 
         }),
 
@@ -34,8 +24,7 @@ define(function (require) {
     };
 
     return {
-        Employee: Employee,
-        EmployeeCollection: EmployeeCollection
+        Trip: Trip
     };
 
 });

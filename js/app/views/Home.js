@@ -5,8 +5,8 @@ define(function (require) {
     var $                   = require('jquery'),
         _                   = require('underscore'),
         Backbone            = require('backbone'),
-        EmployeeListView    = require('app/views/EmployeeList'),
-        models              = require('app/models/employee'),
+        TripView    = require('app/views/Trip'),
+        models              = require('app/models/trip'),
         tpl                 = require('text!tpl/Home.html'),
 
         template = _.template(tpl);
@@ -15,24 +15,25 @@ define(function (require) {
     return Backbone.View.extend({
 
         initialize: function () {
-            this.employeeList = new models.EmployeeCollection();
+            this.trip = new models.Trip();
             this.render();
         },
 
         render: function () {
             this.$el.html(template());
-            this.listView = new EmployeeListView({collection: this.employeeList, el: $(".scroller", this.el)});
             return this;
         },
 
         events: {
-            "keyup .search-key":    "search",
-            "keypress .search-key": "onkeypress"
+            "click #calculate-trip":  "search",
         },
 
         search: function (event) {
-            var key = $('.search-key').val();
-            this.employeeList.fetch({reset: true, data: {name: key}});
+            console.log("hiiiiii")
+            this.trip.set({start:$('#start').val(), destination:$('#destination').val(), 
+                people:$('#people').val(), mpg:$('#mpg').val()});
+            this.tripView = new TripView({trip: this.trip, el: $("body")});
+            this.tripView.render();
         },
 
         onkeypress: function (event) {

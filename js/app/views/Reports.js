@@ -19,7 +19,7 @@ define(function (require) {
         render: function () {
             this.$el.html(template(this.model.attributes));
             this.model.reports.fetch();
-            this.listView = new EmployeeListView({collection: this.model.reports, el: $(".scroller", this.el)});
+            this.listView = new EmployeeListView({collection: this.model.trip, el: $(".scroller", this.el)});
             return this;
         }
 
