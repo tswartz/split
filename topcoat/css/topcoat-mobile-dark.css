@@ -17,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
   background: #3a3f42 url("../img/bg_dark.png") repeat-x;
-  color: #000;
+  color: white;
   font: 16px "Source Sans", helvetica, arial, sans-serif;
   font-weight: 200;
   text-rendering: optimizeLegibility;
@@ -736,6 +736,7 @@ Navigation Bar
   margin: var-margin;
   line-height: 4rem;
   vertical-align: top;
+  text-align: center;
 }
 .topcoat-navigation-bar__title {
   padding: 0;

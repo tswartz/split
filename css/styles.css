@@ -62,11 +62,19 @@ a {
 }
 
 .details h2 {
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-    font-size: 1.1rem;
+    padding: 0px;
+    margin: 10px 0px 0px 10px;
+    font-size: 2rem;
     font-weight: normal;
-    color: #888;
+    color:  #888;
+}
+
+.details h4 {
+    padding: 0px;
+    margin: 10px 0px 0px 10px;
+    font-size: 1rem;
+    font-weight: lighter;
+    color:  #888;
 }
 
 .list li {

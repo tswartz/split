@@ -16,8 +16,8 @@
 body {
   margin: 0;
   padding: 0;
-  background: #dfe2e2;
-  color: #000;
+  background: white;
+  color: white;
   font: 16px "Source Sans", helvetica, arial, sans-serif;
   font-weight: 200;
   text-rendering: optimizeLegibility;
@@ -748,6 +748,12 @@ Navigation Bar
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.trip-title {
   font-size: 1.3rem;
   font-weight: 400;
   color: #000;

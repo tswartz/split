@@ -29,8 +29,9 @@ define(function (require) {
         },
 
         search: function (event) {
+            var mpg = 25;
             this.trip.set({start:$('#start').val(), destination:$('#destination').val(), 
-                people:$('#people').val(), mpg:$('#mpg').val()});
+                people:parseInt($('#people').val()), mpg:mpg});
             this.tripView = new TripView({trip: this.trip, el: $("body")});
             this.tripView.calculateTrip();
         },
