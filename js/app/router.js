@@ -4,7 +4,10 @@ define(function (require) {
 
     var $           = require('jquery'),
         Backbone    = require('backbone'),
+        PageSlider  = require('app/utils/pageslider'),
         HomeView    = require('app/views/Home'),
+
+        slider = new PageSlider($('body')),
 
         homeView = new HomeView();
 
