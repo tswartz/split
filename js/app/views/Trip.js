@@ -5,6 +5,7 @@ define(function (require) {
     var $                   = require('jquery'),
         _                   = require('underscore'),
         Backbone            = require('backbone'),
+        VenmoView           = require('app/views/Venmo'),
         tpl                 = require('text!tpl/Trip.html'),
 
         template = _.template(tpl);
@@ -20,6 +21,10 @@ define(function (require) {
         render: function () {
             this.$el.empty().html(template(this.tripResults));
             return this;
+        },
+
+        events: {
+            "click #split-trip": 'splitTrip'
         },
 
         calculateTrip: function() {
@@ -47,6 +52,11 @@ define(function (require) {
                         };
                         that.render();
             });
+        },
+
+        splitTrip: function(e) {
+            this.venmoView = new VenmoView({trip: this.trip, el: $("body")});
+            this.venmoView.render();
         }
 
     });

@@ -1,0 +1,12 @@
+<div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center half">
+        <h1 class="topcoat-navigation-bar__title">Split this Shit</h1>
+    </div>
+</div>
+
+<div class="details">
+    <% for (i=0; i<numPeople; i++) { %>
+        <label>Passenger <%=i+1%>: </label><input id="person-<%=i%>" type="text" placeholder="Venmo username or email"><br/><br/><br/>
+    <% } %>
+    <button id="send-charges">Send Charges</button>
+</div>
