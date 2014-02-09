@@ -1,15 +1,12 @@
-## Employee Directory ##
+## Let's Split ##
 
-### Sample Mobile/PhoneGap Application built with Backbone.js, RequireJS and Topcoat ###
+### Make damn well sure that your friends pay you back. ###
+x
+Split is a very simple price splitting application built using [Backbone.js](http://backbonejs.org) and [RequireJS](http://requirejs.org/), and modeled after [Ccoenraet's](https://github.com/ccoenraets/directory-backbone-topcoat-require) boilerplate backbone app.
 
-"Backbone Directory" is a simple Employee Directory application built with [Backbone.js](http://backbonejs.org), [RequireJS](http://requirejs.org/), and [Topcoat] (http://topcoat.io).
+API calls to google and venmo enable accurate distance calculations and payment integration with your friends.
 
-Refer to [this blog](http://coenraets.org) for more information about the application.
+We developed this in under 24 hours at Hackbeanpot in Cambridge, and we had a blast doing it!!
 
-
-The application runs out-of-the-box with an in-memory data store.
-
-If you want to experiment the application with other persistence layers, download the REST services in the following repositories:
-
-- [directory-rest-nodejs](https://github.com/ccoenraets/directory-rest-nodejs) (Node.js/MongoDB implementation)
-- [directory-rest-php](https://github.com/ccoenraets/directory-rest-php) (PHP implementation)
+Safe driving!
+Talia & Rose
