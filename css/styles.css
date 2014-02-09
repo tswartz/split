@@ -53,8 +53,11 @@ textarea:focus{
 }
 
 .logo-and-slogan-container {
-    text-align: center;
+    width: 430px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 19px;
+    text-align: center;
 }
 
 .logo-and-slogan {
@@ -88,25 +91,18 @@ input:focus{
 }
 
 .content-container {
+    width: 430px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.success-content-container {
     text-align: center;
 }
 
-.split-input {
-    width: 290px;
-    text-align: start;
-    display: inline-block;
-}
-
-.split-input-label {
-    font-size: 14px;
-    margin-right: 14px;
-    text-align: start;
-    display: inline-block;
-}
 
 .calculations-container {
     text-align: left;
-    margin-left: 25%;
     font-size: 20px
     padding: 0px;
 }
