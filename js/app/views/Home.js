@@ -5,7 +5,7 @@ define(function (require) {
     var $                   = require('jquery'),
         _                   = require('underscore'),
         Backbone            = require('backbone'),
-        TripView    = require('app/views/Trip'),
+        TripView            = require('app/views/Trip'),
         models              = require('app/models/trip'),
         tpl                 = require('text!tpl/Home.html'),
 
@@ -29,7 +29,6 @@ define(function (require) {
         },
 
         search: function (event) {
-            console.log("hiiiiii")
             this.trip.set({start:$('#start').val(), destination:$('#destination').val(), 
                 people:$('#people').val(), mpg:$('#mpg').val()});
             this.tripView = new TripView({trip: this.trip, el: $("body")});

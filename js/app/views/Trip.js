@@ -23,6 +23,18 @@ define(function (require) {
         },
 
         calculateTrip: function() {
+            var totalDistance = 1
+            var googleUrl = "http://maps.googleapis.com/maps/api/directions/json?origin=" + 
+                            this.trip.get('start') + 
+                            "&destination=" + 
+                            this.trip.get('destination') +
+                            "&sensor=false";
+            var encodedUrl = encodeURIComponent(googleUrl);
+            var proxyUrl = 'http://jsonp.guffa.com/Proxy.ashx?url=' + encodedUrl;
+            $.ajax({dataType: 'jsonp',
+                    url: proxyUrl}).done(function(data){
+                totalDistance = data.routes[0].legs[0].distance.text
+            });
 
             this.tripResults = {
                 
