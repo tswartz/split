@@ -13,6 +13,8 @@ define(function (require) {
 
         initialize: function (data) {
             this.trip = data.trip;
+            this.passengers = this.trip.get('people')-1;
+            this.accessToken = 'NucUfWPR4XDzT8x57ECj2F28yJgnCJNA';
             this.render();
         },
 
@@ -21,12 +23,28 @@ define(function (require) {
         },
 
         render: function () {
-            this.$el.empty().html(template({numPeople: this.trip.get('people')-1}));
+            this.$el.empty().html(template({numPeople: this.passengers}));
             return this;
         },
 
         sendCharges: function(e) {
-
+            for(var i=0;i<this.passengers;i++){
+                var email = $('#passenger-'+i).val();
+                var amount = 0-this.trip.get('costPerPerson');
+                var localUrl = "http://localhost:5000?" +
+                                "access_token=" + this.accessToken  +
+                                "&email=" + encodeURIComponent(email) +
+                                "&note=" + encodeURIComponent("Thanks for the gas!") +
+                                "&amount=" + amount;
+                //var encodedUrl = encodeURIComponent(venmoUrl);
+                //var proxyUrl = 'https://jsonp.jit.su/?url=' + encodedUrl;
+                $.ajax({
+                    url: localUrl,
+                    type: "POST",
+                }).done(function(data){
+                    console.log(data);
+                })
+            }
         }
 
     });
