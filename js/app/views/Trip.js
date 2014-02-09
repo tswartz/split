@@ -41,7 +41,7 @@ define(function (require) {
             $.ajax({dataType: 'jsonp',
                     url: proxyUrl}).done(function(data){
                         mileage = data.routes[0].legs[0].distance.text;
-                        var totalDistance = parseInt(mileage.split(' ')[0]);
+                        var totalDistance = parseInt(mileage.split(' ')[0].replace(",",""));
                         var avgGasPrice = 3.270;
                         var totalCost = (totalDistance/that.trip.get('mpg')) * avgGasPrice;
                         that.tripResults = {

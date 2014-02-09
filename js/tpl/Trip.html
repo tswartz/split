@@ -1,14 +1,15 @@
-<div class="topcoat-navigation-bar">
-    <div class="topcoat-navigation-bar__item">
-        <h1 class="topcoat-navigation-bar__title">Your Trip</h1>
-    </div>
+<div class="logo-and-slogan-container">
+    <img class="logo-and-slogan" src="css/images/icon.png">
+    <h1 class="logo-and-slogan">Your Trip</h1>
 </div>
-<div class='details'>
-    <h4>Miles: <%= mileage %></h4>
-    <h4>Average Gas Price: $<%= avgGasPrice %>/gal</h4>
-    <h4>Total Cost: $<%= totalCost %></h4>
-    <h2>Cost Per Person: $<%= costPerPerson %></h2>
-    <br/>
-    <button id="split-trip">Split this shit</button>
+<div class='content-container'>
+    <div class="calculations-container">
+        <h3>Miles: <%= mileage %></h3>
+        <h3>Average Gas Price: $<%= avgGasPrice %>/gal</h3>
+        <h3>Total Cost: $<%= totalCost %></h3>
+        <h2>Cost Per Person: $<%= costPerPerson %></h2>
+        <br/>
+    </div>
+    <input id="split-trip" class="split-button" type="submit" value="Let's Split!">
 </div>
         
