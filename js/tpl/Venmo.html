@@ -4,7 +4,7 @@
 </div>
 <div class='content-container'>
     <% for (i=0; i<numPeople; i++) { %>
-        <label for="passenger-<%=i%>" class="split-input-label">Passenger <%=i+1%>: </label><input id="passenger-<%=i%>" class="split-input" type="text" placeholder="Venmo username or email"><br/>
+        <label for="passenger-<%=i%>" class="split-input-label">Passenger <%=i+1%>: </label><input id="passenger-<%=i%>" class="split-input" type="text" placeholder="Venmo email"><br/>
     <% } %>
     <input id="send-charges" class="split-button" type="submit" value="Send Charges!">
 </div>

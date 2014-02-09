@@ -5,6 +5,7 @@ define(function (require) {
     var $                   = require('jquery'),
         _                   = require('underscore'),
         Backbone            = require('backbone'),
+        SuccessView            = require('app/views/Success'),
         tpl                 = require('text!tpl/Venmo.html'),
 
         template = _.template(tpl);
@@ -28,6 +29,7 @@ define(function (require) {
         },
 
         sendCharges: function(e) {
+            var that = this;
             for(var i=0;i<this.passengers;i++){
                 var email = $('#passenger-'+i).val();
                 var amount = 0-this.trip.get('costPerPerson');
@@ -41,8 +43,18 @@ define(function (require) {
                 $.ajax({
                     url: localUrl,
                     type: "POST",
+                    dataType: "json"
                 }).done(function(data){
-                    console.log(data);
+                    if (data["data"]) {
+                        console.log(data);
+                        that.successView = new SuccessView({el: $("body")});
+                        that.successView.render();
+                    } else if (data["error"]) {
+                        for(var i=0;i<this.passengers;i++){
+                            $('#passenger-'+i).val("");
+                        }
+                        $('.content-container').append("<p class='error'>" + data["error"]["message"] + "</p>");
+                    }
                 })
             }
         }
