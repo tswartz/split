@@ -44,12 +44,14 @@ define(function (require) {
                         var totalDistance = parseInt(mileage.split(' ')[0]);
                         var avgGasPrice = 3.270;
                         var totalCost = (totalDistance/that.trip.get('mpg')) * avgGasPrice;
+                        var costPerPerson = (totalCost/that.trip.get('people')).toFixed(2);
                         that.tripResults = {
                             mileage: mileage,
                             avgGasPrice: avgGasPrice,
                             totalCost: totalCost.toFixed(2),
-                            costPerPerson: (totalCost/that.trip.get('people')).toFixed(2)
+                            costPerPerson: costPerPerson
                         };
+                        that.trip.set('costPerPerson', costPerPerson);
                         that.render();
             });
         },
