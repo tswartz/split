@@ -5,7 +5,7 @@ define(function (require) {
     var $                   = require('jquery'),
         _                   = require('underscore'),
         Backbone            = require('backbone'),
-        SuccessView            = require('app/views/Success'),
+        SuccessView         = require('app/views/Success'),
         tpl                 = require('text!tpl/Venmo.html'),
 
         template = _.template(tpl);
@@ -31,22 +31,19 @@ define(function (require) {
         sendCharges: function(e) {
             var that = this;
             for(var i=0;i<this.passengers;i++){
-                var email = $('#passenger-'+i).val();
-                var amount = 0-this.trip.get('costPerPerson');
+                var email = $('#passenger-'+i).val(),
+                    amount = 0-this.trip.get('costPerPerson');
                 var localUrl = "http://localhost:5000?" +
                                 "access_token=" + this.accessToken  +
                                 "&email=" + encodeURIComponent(email) +
                                 "&note=" + encodeURIComponent("Thanks for the gas!") +
                                 "&amount=" + amount;
-                //var encodedUrl = encodeURIComponent(venmoUrl);
-                //var proxyUrl = 'https://jsonp.jit.su/?url=' + encodedUrl;
                 $.ajax({
                     url: localUrl,
                     type: "POST",
                     dataType: "json"
                 }).done(function(data){
                     if (data["data"]) {
-                        console.log(data);
                         that.successView = new SuccessView({el: $("body")});
                         that.successView.render();
                     } else if (data["error"]) {

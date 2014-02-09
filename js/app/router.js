@@ -4,10 +4,7 @@ define(function (require) {
 
     var $           = require('jquery'),
         Backbone    = require('backbone'),
-        PageSlider  = require('app/utils/pageslider'),
         HomeView    = require('app/views/Home'),
-
-        slider = new PageSlider($('body')),
 
         homeView = new HomeView();
 
@@ -33,18 +30,6 @@ define(function (require) {
                 });
             });
         }
-        // ,
-
-        // reports: function (id) {
-        //     require(["app/models/employee", "app/views/Reports"], function (models, ReportsView) {
-        //         var employee = new models.Employee({id: id});
-        //         employee.fetch({
-        //             success: function (data) {
-        //                 slider.slidePage(new ReportsView({model: data}).$el);
-        //             }
-        //         });
-        //     });
-        // }
 
     });
 

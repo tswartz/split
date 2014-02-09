@@ -28,14 +28,15 @@ define(function (require) {
         },
 
         calculateTrip: function() {
-            var that = this;
-            var totalDistance = 1;
-            var mileage = "";
+            var that = this,
+                totalDistance = 1,
+                mileage = "";
             var googleUrl = "http://maps.googleapis.com/maps/api/directions/json?origin=" + 
                             this.trip.get('start') + 
                             "&destination=" + 
                             this.trip.get('destination') +
                             "&sensor=false";
+            //use proxy server to avoid cross domain nonsense
             var encodedUrl = encodeURIComponent(googleUrl);
             var proxyUrl = 'http://jsonp.guffa.com/Proxy.ashx?url=' + encodedUrl;
             $.ajax({dataType: 'jsonp',
