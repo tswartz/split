@@ -20,7 +20,7 @@ define(function (require) {
         },
 
         render: function () {
-            this.$el.html(template());
+            this.$el.empty().html(template());
             return this;
         },
 

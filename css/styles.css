@@ -57,6 +57,11 @@ textarea:focus{
     margin-top: 19px;
 }
 
+.logo-and-slogan {
+    text-align: start;
+    display: inline-block;
+}
+
 
 input {
     width: 400px;
