@@ -15,7 +15,7 @@ define(function (require) {
         initialize: function (data) {
             this.trip = data.trip;
             this.passengers = this.trip.get('people')-1;
-            this.accessToken = 'NucUfWPR4XDzT8x57ECj2F28yJgnCJNA';
+            this.accessToken = 'YOUR ACCESS TOKEN HERE';
             this.render();
         },
 
